@@ -1,0 +1,26 @@
+<div class="flex flex-col content-center mt-12">
+    <h1 class="text-white"><a class="btn btn-light" href="/"><i class="far fa-plus-square fa-lg"></i> Add New User </a>  Users List </h1>
+<table class="table table-striped bg-white rounded-lg ">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="/{{this._id}}"><i class="far fa-edit fa-lg" aria-hidden="true"></i></a>&nbsp; 
+                <a href="/delete/{{this._id}}" onclick="return confirm ('sure to delete this?')"><i class="far fa-trash-alt fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
